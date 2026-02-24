@@ -23,31 +23,31 @@ export default function Home() {
         let timeoutId: NodeJS.Timeout;
 
         const animateComet = async () => {
-            // Random wait time between 5s and 20s
-            const waitTime = Math.random() * 15000 + 5000;
+            // Random wait time between 5s and 10s
+            const waitTime = Math.random() * 5000 + 5000;
 
             timeoutId = setTimeout(async () => {
-                // Random start position on the right/top side
-                const startY = Math.random() * window.innerHeight;
+                // Fixed high start position
+                const startY = Math.random() * (window.innerHeight / 2);
 
                 // Reset properties before animation starts
                 await cometControls.set({
                     x: '100vw',
                     y: startY,
-                    rotate: startY > window.innerHeight / 2 ? -25 : 25, // Angle trajectory slightly based on start
-                    scale: 0.8 + Math.random() * 0.4,
+                    rotate: 20, // fixed downward angle
+                    scale: 1,
                     opacity: 0
                 });
 
-                // Fast, sharp flyby with an afterglow (speeded up)
+                // Faster, sharper flyby without CSS trails
                 await cometControls.start({
-                    x: '-50vw',
-                    y: startY + (startY > window.innerHeight / 2 ? -400 : 400),
+                    x: '-20vw',
+                    y: startY + 500,
                     opacity: [0, 1, 1, 0],
                     transition: {
-                        duration: 0.5, // Much faster duration for instant flyby
-                        ease: "easeIn",
-                        times: [0, 0.1, 0.8, 1], // Fade in quick, stay visible, fade out fast at end
+                        duration: 0.25, // Extremely fast
+                        ease: "linear",
+                        times: [0, 0.1, 0.9, 1],
                     }
                 });
 
@@ -67,21 +67,19 @@ export default function Home() {
             <div className="bg-grain"></div>
             <div className="fixed inset-0 pointer-events-none z-[60] bg-scanlines opacity-20"></div>
 
-            {/* Char's Red Comet Animation */}
+            {/* Overhauled Char's Red Comet Animation */}
             <motion.div
                 className="fixed w-0 h-0 z-40 pointer-events-none"
                 animate={cometControls}
                 initial={{ opacity: 0 }}
             >
-                <div className="relative flex items-center h-20 w-[600px] -ml-[500px]">
+                <div className="relative flex items-center h-4 w-[400px]">
                     {/* Head Core - Intense blinding white-yellow */}
-                    <div className="absolute right-0 w-16 h-16 rounded-full bg-[radial-gradient(circle_at_center,theme(colors.white)_0%,#FFD700_30%,theme(colors.primary)_70%,transparent_100%)] blur-[2px] z-10 shadow-[0_0_80px_20px_theme(colors.primary-light)]"></div>
+                    <div className="absolute right-0 w-8 h-8 rounded-full bg-white blur-[1px] z-10 shadow-[0_0_30px_10px_#FFD700]"></div>
                     {/* Head Glow/Corona - Deep intense crimson surrounding the core */}
-                    <div className="absolute right-2 w-24 h-24 rounded-full bg-primary/80 blur-xl mix-blend-screen z-0"></div>
-                    {/* Tail - extremely long gradient fading to zero */}
-                    <div className="absolute right-12 w-[800px] h-8 rounded-r-full bg-[linear-gradient(to_left,theme(colors.primary)_0%,theme(colors.primary)_10%,rgba(158,27,17,0.4)_40%,transparent_100%)] blur-[4px]"></div>
-                    {/* Particle spark trail inside tail */}
-                    <div className="absolute right-20 w-[600px] h-[2px] bg-[linear-gradient(to_left,#FFD700_0%,theme(colors.primary)_20%,transparent_100%)] blur-[1px]"></div>
+                    <div className="absolute right-1 w-12 h-12 rounded-full bg-primary blur-md mix-blend-screen z-0"></div>
+                    {/* Tail - Linear trail fading into transparency */}
+                    <div className="absolute right-6 w-[350px] h-[3px] bg-gradient-to-l from-[#FFD700] via-primary to-transparent opacity-80 shadow-[0_0_15px_1px_rgba(158,27,17,0.8)]"></div>
                 </div>
             </motion.div>
 
@@ -149,9 +147,9 @@ export default function Home() {
                                     <span className="relative z-10">Init Contact</span>
                                     <div className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 group-hover:translate-x-0"></div>
                                 </a>
-                                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="group h-12 min-w-[180px] flex items-center justify-center gap-3 border border-white/20 bg-transparent px-8 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:border-primary hover:text-primary">
-                                    <span className="material-symbols-outlined text-lg">download</span>
-                                    <span>Resume_v2.4</span>
+                                <a href="/resume.pdf" download="Jungwook_Van_Resume.pdf" className="group h-12 min-w-[180px] flex items-center justify-center gap-3 border border-white/20 bg-transparent px-8 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:border-primary hover:text-primary">
+                                    <span className="material-symbols-outlined text-lg" style={{ fontSize: '20px', fontFamily: '"Material Symbols Outlined"' }}>download</span>
+                                    <span>Download Resume</span>
                                 </a>
                             </motion.div>
                         </motion.div>
@@ -172,19 +170,19 @@ export default function Home() {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10 bg-black/40">
                                 <div className="flex flex-col gap-1 p-6 hover:bg-white/5 transition-colors">
                                     <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-primary">Core Focus</span>
-                                    <span className="text-xl font-bold text-white font-display">Deep Learning</span>
+                                    <span className="text-xl font-bold text-white font-display">Enterprise Dev.</span>
                                 </div>
                                 <div className="flex flex-col gap-1 p-6 hover:bg-white/5 transition-colors">
-                                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-primary">Certification</span>
-                                    <span className="text-xl font-bold text-white font-display">AWS Solutions Arch</span>
+                                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-primary">Institution</span>
+                                    <span className="text-xl font-bold text-white font-display">UTS</span>
                                 </div>
                                 <div className="flex flex-col gap-1 p-6 hover:bg-white/5 transition-colors">
-                                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-primary">Infrastructure</span>
-                                    <span className="text-xl font-bold text-white font-display">Kubernetes CKA</span>
+                                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-primary">Degree</span>
+                                    <span className="text-xl font-bold text-white font-display">BSc Info Tech</span>
                                 </div>
                                 <div className="flex flex-col gap-1 p-6 hover:bg-white/5 transition-colors">
-                                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-primary">Experience</span>
-                                    <span className="text-xl font-bold text-white font-display">7+ Years</span>
+                                    <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-primary">Academic Grade</span>
+                                    <span className="text-xl font-bold text-white font-display">GPA 6.0 | WAM 79.9</span>
                                 </div>
                             </div>
                         </motion.div>
@@ -279,19 +277,19 @@ export default function Home() {
                                 className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
                             >
                                 {[
-                                    { icon: 'psychology', title: 'AI & Deep Learning', desc: 'PyTorch, TensorFlow, Hugging Face Transformers. Specializing in NLP and Computer Vision model fine-tuning.' },
-                                    { icon: 'cloud', title: 'Cloud Infrastructure', desc: 'AWS Certified Solutions Architect. Expert in designing fault-tolerant, scalable distributed systems on EC2 and Lambda.' },
-                                    { icon: 'deployed_code', title: 'DevOps & Kubernetes', desc: 'CKA Certified (April 2026 Target). Mastery over container orchestration, Helm charts, CI/CD pipelines (GitHub Actions, Jenkins).' },
-                                    { icon: 'code', title: 'Backend Engineering', desc: 'Python (FastAPI, Django), Go, Java (Spring Boot). Building high-performance APIs and microservices.' },
-                                    { icon: 'database', title: 'Data Engineering', desc: 'PostgreSQL, Redis, Kafka, Apache Spark. Designing efficient data pipelines and storage solutions.' },
-                                    { icon: 'security', title: 'SecOps', desc: 'Implementation of rigorous security protocols, IAM policies, and vulnerability assessments.' }
+                                    { icon: 'code', title: 'Software Engineering', desc: 'Enterprise Software Development Major. Distinctions in Data Structures (92%), Advanced Software Development (87%), and Software Architecture (80%).' },
+                                    { icon: 'psychology', title: 'Deep Learning', desc: 'Completed Advanced Deep Learning and Computational Intelligence focusing on neural networks and complex algorithms.' },
+                                    { icon: 'cloud', title: 'Cloud Environments', desc: 'High Distinction in Cloud Computing and Software as a Service (86%).' },
+                                    { icon: 'deployed_code', title: 'Game Development', desc: 'Sub-Major in Computer Graphics and Animation. Strong background in interactive media and game design methodologies.' },
+                                    { icon: 'database', title: 'Data Foundations', desc: 'Solid fundamentals in Database Modeling, Web Systems, and Information Systems.' },
+                                    { icon: 'security', title: 'Project Management', desc: 'Distinction level project management skills with practical, studio-driven development methodology.' }
                                 ].map((item, i) => (
                                     <motion.div key={i} variants={fadeInUp} className="group relative bg-[#121214] p-8 border border-white/5 hover:border-primary/40 transition-all duration-300">
                                         <div className="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <span className="material-symbols-outlined text-primary text-sm">north_east</span>
+                                            <span className="font-mono text-[10px] text-primary">KOREA</span>
                                         </div>
                                         <div className="mb-6 flex h-10 w-10 items-center justify-center border border-primary/20 bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                            <span className="material-symbols-outlined text-xl">{item.icon}</span>
+                                            <span className="material-symbols-outlined" style={{ fontSize: '24px', fontFamily: '"Material Symbols Outlined"' }}>{item.icon}</span>
                                         </div>
                                         <h3 className="mb-3 text-lg font-bold text-white font-mono uppercase tracking-wide">{item.title}</h3>
                                         <p className="text-sm text-slate-400 leading-relaxed font-light">
@@ -340,7 +338,7 @@ export default function Home() {
                                     </div>
                                     <div className="flex items-start gap-6 relative z-10">
                                         <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-none border border-slate-700 bg-black/50 text-white">
-                                            <span className="material-symbols-outlined text-3xl font-light">fitness_center</span>
+                                            <span className="material-symbols-outlined font-light" style={{ fontSize: '32px', fontFamily: '"Material Symbols Outlined"' }}>fitness_center</span>
                                         </div>
                                         <div>
                                             <h3 className="text-xl font-bold text-white font-mono uppercase">Iron Routine</h3>
@@ -361,7 +359,7 @@ export default function Home() {
                                     </div>
                                     <div className="flex items-start gap-6 relative z-10">
                                         <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-none border border-slate-700 bg-black/50 text-white">
-                                            <span className="material-symbols-outlined text-3xl font-light">precision_manufacturing</span>
+                                            <span className="material-symbols-outlined font-light" style={{ fontSize: '32px', fontFamily: '"Material Symbols Outlined"' }}>precision_manufacturing</span>
                                         </div>
                                         <div>
                                             <h3 className="text-xl font-bold text-white font-mono uppercase">Gunpla Modeling</h3>
@@ -387,8 +385,8 @@ export default function Home() {
                             className="mx-auto max-w-4xl text-center"
                         >
                             <h2 className="mb-6 text-2xl font-bold text-white tracking-tight">Ready to initiate?</h2>
-                            <a className="group inline-flex items-center gap-4 border border-primary bg-primary/10 px-8 py-3 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:bg-primary hover:shadow-[0_0_30px_-5px_rgba(158,27,17,0.5)]" href="mailto:contact@salieri.dev">
-                                <span className="material-symbols-outlined group-hover:animate-bounce">mail</span>
+                            <a className="group inline-flex items-center gap-4 border border-primary bg-primary/10 px-8 py-3 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:bg-primary hover:shadow-[0_0_30px_-5px_rgba(158,27,17,0.5)]" href="mailto:kordalek@naver.com">
+                                <span className="material-symbols-outlined group-hover:animate-bounce" style={{ fontSize: '20px', fontFamily: '"Material Symbols Outlined"' }}>mail</span>
                                 Initialize Contact
                             </a>
                             <div className="mt-12 flex flex-col items-center justify-center gap-4 border-t border-white/5 pt-6 sm:flex-row relative">
