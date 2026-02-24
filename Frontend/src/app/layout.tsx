@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className={`dark scroll-smooth ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
-            <body className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-200 overflow-x-hidden antialiased selection:bg-primary selection:text-white">
+            <body suppressHydrationWarning className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-200 overflow-x-hidden antialiased selection:bg-primary selection:text-white">
                 {children}
             </body>
         </html>
