@@ -126,7 +126,7 @@ export default function Home() {
                                 <span className="mr-2 h-1.5 w-1.5 rounded-full bg-primary animate-pulse-slow"></span>
                                 System Status: Online
                             </motion.div>
-                            <motion.h1 variants={fadeInUp} className="text-5xl font-bold leading-none tracking-tight text-white sm:text-7xl lg:text-9xl mix-blend-overlay opacity-90">
+                            <motion.h1 variants={fadeInUp} className="text-5xl font-bold font-display leading-none tracking-tight text-white sm:text-7xl lg:text-9xl mix-blend-overlay opacity-90">
                                 SALIERI
                             </motion.h1>
                             <motion.div variants={fadeInUp} className="space-y-2 -mt-4 relative">
@@ -340,7 +340,7 @@ export default function Home() {
                                         </svg>
                                     </div>
                                     <div className="flex items-start gap-6 relative z-10">
-                                        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-none border border-slate-700 bg-black/50 text-white">
+                                        <div className="flex h-16 w-16 shrink-0 items-center justify-center border border-primary/20 bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                             <span className="material-symbols-outlined font-light" style={{ fontSize: '32px', fontFamily: '"Material Symbols Outlined"' }}>fitness_center</span>
                                         </div>
                                         <div>
@@ -361,7 +361,7 @@ export default function Home() {
                                         </svg>
                                     </div>
                                     <div className="flex items-start gap-6 relative z-10">
-                                        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-none border border-slate-700 bg-black/50 text-white">
+                                        <div className="flex h-16 w-16 shrink-0 items-center justify-center border border-primary/20 bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                             <span className="material-symbols-outlined font-light" style={{ fontSize: '32px', fontFamily: '"Material Symbols Outlined"' }}>precision_manufacturing</span>
                                         </div>
                                         <div>
