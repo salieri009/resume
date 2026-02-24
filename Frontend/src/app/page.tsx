@@ -142,12 +142,12 @@ export default function Home() {
                                 &gt; Bridging theoretical deep learning with production infrastructure.<br />
                                 &gt; Executing with precision.
                             </motion.p>
-                            <motion.div variants={fadeInUp} className="flex flex-col gap-6 sm:flex-row mt-4">
+                            <motion.div variants={fadeInUp} className="flex flex-col gap-6 sm:flex-row mt-8 mb-16 relative z-50">
                                 <a href="#contact" className="group relative flex items-center justify-center h-12 min-w-[180px] overflow-hidden bg-primary px-8 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:bg-white hover:text-black">
                                     <span className="relative z-10">Init Contact</span>
                                     <div className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 group-hover:translate-x-0"></div>
                                 </a>
-                                <a href="/resume.pdf" download="Jungwook_Van_Resume.pdf" className="group h-12 min-w-[180px] flex items-center justify-center gap-3 border border-white/20 bg-transparent px-8 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:border-primary hover:text-primary">
+                                <a href="/resume.pdf" download="Jungwook_Van_Resume.pdf" className="group h-12 min-w-[180px] flex items-center justify-center gap-3 border border-white/20 bg-transparent px-8 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:border-primary hover:text-primary backdrop-blur-sm">
                                     <span className="material-symbols-outlined text-lg" style={{ fontSize: '20px', fontFamily: '"Material Symbols Outlined"' }}>download</span>
                                     <span>Download Resume</span>
                                 </a>
@@ -160,12 +160,12 @@ export default function Home() {
                     </section>
 
                     {/* Quick Stats Section */}
-                    <section className="relative z-20 -mt-24 px-4 pb-16 lg:px-40">
+                    <section className="relative z-30 -mt-24 px-4 pb-16 lg:px-40">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="mx-auto max-w-7xl glass-panel p-1 rounded-none border-l-4 border-l-primary"
+                            className="mx-auto max-w-7xl glass-panel p-1 rounded-none border-l-4 border-l-primary relative z-40"
                         >
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10 bg-black/40">
                                 <div className="flex flex-col gap-1 p-6 hover:bg-white/5 transition-colors">
