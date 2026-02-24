@@ -27,22 +27,22 @@ export default function Home() {
             const waitTime = Math.random() * 5000 + 5000;
 
             timeoutId = setTimeout(async () => {
-                // Fixed high start position
-                const startY = Math.random() * (window.innerHeight / 2);
+                // Start from top-left off-screen
+                const startY = Math.random() * (window.innerHeight / 2) - 100;
 
                 // Reset properties before animation starts
                 await cometControls.set({
-                    x: '100vw',
+                    x: '-20vw',
                     y: startY,
-                    rotate: 20, // fixed downward angle
+                    rotate: 20, // Downward and to the right
                     scale: 1,
                     opacity: 0
                 });
 
                 // Faster, sharper flyby without CSS trails
                 await cometControls.start({
-                    x: '-20vw',
-                    y: startY + 500,
+                    x: '100vw', // Move to the right
+                    y: startY + 500, // Move downwards
                     opacity: [0, 1, 1, 0],
                     transition: {
                         duration: 0.25, // Extremely fast
@@ -74,12 +74,12 @@ export default function Home() {
                 initial={{ opacity: 0 }}
             >
                 <div className="relative flex items-center h-4 w-[400px]">
-                    {/* Head Core - Intense blinding white-yellow */}
-                    <div className="absolute right-0 w-8 h-8 rounded-full bg-white blur-[1px] z-10 shadow-[0_0_30px_10px_#FFD700]"></div>
+                    {/* Tail - Linear trail fading into transparency (Tail is behind on the left now) */}
+                    <div className="absolute left-6 w-[350px] h-[3px] bg-gradient-to-r from-transparent via-primary to-[#FFD700] opacity-80 shadow-[0_0_15px_1px_rgba(158,27,17,0.8)]"></div>
                     {/* Head Glow/Corona - Deep intense crimson surrounding the core */}
-                    <div className="absolute right-1 w-12 h-12 rounded-full bg-primary blur-md mix-blend-screen z-0"></div>
-                    {/* Tail - Linear trail fading into transparency */}
-                    <div className="absolute right-6 w-[350px] h-[3px] bg-gradient-to-l from-[#FFD700] via-primary to-transparent opacity-80 shadow-[0_0_15px_1px_rgba(158,27,17,0.8)]"></div>
+                    <div className="absolute left-1 w-12 h-12 rounded-full bg-primary blur-md mix-blend-screen z-0"></div>
+                    {/* Head Core - Intense blinding white-yellow (Lead is on the left) */}
+                    <div className="absolute left-0 w-8 h-8 rounded-full bg-white blur-[1px] z-10 shadow-[0_0_30px_10px_#FFD700]"></div>
                 </div>
             </motion.div>
 

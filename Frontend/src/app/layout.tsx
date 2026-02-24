@@ -15,8 +15,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-    title: 'Salieri - Refined Portfolio',
-    description: 'Architecting Systems with Disciplined Passion',
+    title: 'Salieri - Resume',
+    description: 'Enterprise Software Developer',
 }
 
 export default function RootLayout({
