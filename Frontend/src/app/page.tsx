@@ -209,24 +209,14 @@ export default function Home() {
                                     Disciplined <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-white">Passion.</span>
                                 </motion.h2>
                                 <motion.div variants={fadeInUp} className="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
-                                    <p>
-                                        I operate at the intersection of mathematical rigor and creative chaos. My code isn&apos;t just functional; it is a manifestation of <span className="text-white font-medium border-b border-primary/50 pb-0.5">intellectual perfectionism</span>.
+                                    <p className="font-light">
+                                        I operate at the intersection of mathematical rigor and creative chaos to build robust systems. I believe that true innovation lies in the details others overlook.
                                     </p>
-                                    <p className="text-sm">
-                                        수학적 엄밀함과 창조적 혼돈의 교차점에서 작업합니다. 저의 코드는 단순한 기능을 넘어 지적 완벽주의의 발현입니다.
+                                    <p className="font-light">
+                                        수학적 엄밀함과 창조적 혼돈의 교차점에서 견고한 시스템을 구축합니다. 진정한 혁신은 남들이 간과하는 디테일에 있다고 믿습니다.
                                     </p>
-                                    <p className="text-sm">
-                                        数学的な厳密さと創造的な混沌の交差点で作業します。私のコードは単なる機能ではなく、知的な完璧主義の現れです。
-                                    </p>
-                                    <div className="h-4"></div>
-                                    <p>
-                                        From architecting distributed systems that handle millions of requests to fine-tuning large language models, I bring a level of focus that borders on obsession. I believe that true innovation lies in the details others overlook. <span className="italic text-slate-500">&quot;꾸준한 루틴이 견고한 시스템을 만든다고 믿습니다.&quot;</span>
-                                    </p>
-                                    <p className="text-sm">
-                                        수백만 건의 요청을 처리하는 분산 시스템 설계부터 대규모 언어 모델 미세 조정까지, 강박에 가까운 집중력을 발휘합니다. 진정한 혁신은 남들이 간과하는 디테일에 있다고 믿습니다.
-                                    </p>
-                                    <p className="text-sm">
-                                        数百万の要求を処理する分散システムの設計から、大規模言語モデルの微調整まで、強迫観念に近い集中力を発揮します。真の革新は他の人が見落とす細部にあると信じています。
+                                    <p className="font-light">
+                                        数学的な厳密さと創造的な混沌の交差点で堅牢なシステムを構築します。真の革新は他の人が見落とす細部にあると信じています。
                                     </p>
                                 </motion.div>
                                 <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 pt-6">
@@ -291,11 +281,11 @@ export default function Home() {
                             >
                                 {[
                                     { icon: 'code', title: 'Software Engineering', desc: 'Enterprise Software Development Major. Distinctions in Data Structures (92%), Advanced Software Development (87%), and Software Architecture (80%).' },
-                                    { icon: 'psychology', title: 'Deep Learning', desc: 'Completed Advanced Deep Learning and Computational Intelligence focusing on neural networks and complex algorithms.' },
+                                    { icon: 'schema', title: 'Deep Learning', desc: 'Completed Advanced Deep Learning and Computational Intelligence focusing on neural networks and complex algorithms.' },
                                     { icon: 'cloud', title: 'Cloud Environments', desc: 'High Distinction in Cloud Computing and Software as a Service (86%).' },
-                                    { icon: 'deployed_code', title: 'Game Development', desc: 'Sub-Major in Computer Graphics and Animation. Strong background in interactive media and game design methodologies.' },
+                                    { icon: 'sports_esports', title: 'Game Development', desc: 'Sub-Major in Computer Graphics and Animation. Strong background in interactive media and game design methodologies.' },
                                     { icon: 'database', title: 'Data Foundations', desc: 'Solid fundamentals in Database Modeling, Web Systems, and Information Systems.' },
-                                    { icon: 'security', title: 'Project Management', desc: 'Distinction level project management skills with practical, studio-driven development methodology.' }
+                                    { icon: 'architecture', title: 'Project Management', desc: 'Distinction level project management skills with practical, studio-driven development methodology.' }
                                 ].map((item, i) => (
                                     <motion.div key={i} variants={fadeInUp} className="group relative bg-[#121214] p-8 border border-white/5 hover:border-primary/40 transition-all duration-300">
                                         <div className="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
