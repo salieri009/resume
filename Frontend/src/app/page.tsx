@@ -39,13 +39,13 @@ export default function Home() {
                     opacity: 0
                 });
 
-                // Fast, sharp flyby with an afterglow
+                // Fast, sharp flyby with an afterglow (speeded up)
                 await cometControls.start({
                     x: '-50vw',
                     y: startY + (startY > window.innerHeight / 2 ? -400 : 400),
                     opacity: [0, 1, 1, 0],
                     transition: {
-                        duration: 1.2,
+                        duration: 0.5, // Much faster duration for instant flyby
                         ease: "easeIn",
                         times: [0, 0.1, 0.8, 1], // Fade in quick, stay visible, fade out fast at end
                     }
@@ -97,9 +97,8 @@ export default function Home() {
                     </div>
                     <nav className="hidden md:flex flex-1 justify-center gap-10">
                         <a className="font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#about">01. About</a>
-                        <a className="font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#work">02. Projects</a>
-                        <a className="font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#stack">03. Stack</a>
-                        <a className="font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#hobbies">04. Hobbies</a>
+                        <a className="font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#stack">02. Stack</a>
+                        <a className="font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#hobbies">03. Hobbies</a>
                     </nav>
                     <div className="flex items-center gap-4">
                         <a className="hidden sm:flex h-9 items-center justify-center border border-primary/50 bg-primary/10 px-6 text-xs font-mono font-bold text-primary hover:bg-primary hover:text-white transition-all uppercase tracking-wider tech-border hover-tech-border" href="#contact">
@@ -146,11 +145,11 @@ export default function Home() {
                                 &gt; Executing with precision.
                             </motion.p>
                             <motion.div variants={fadeInUp} className="flex flex-col gap-6 sm:flex-row mt-4">
-                                <a href="#work" className="group relative flex items-center justify-center h-12 min-w-[180px] overflow-hidden bg-primary px-8 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:bg-white hover:text-black">
-                                    <span className="relative z-10">View Projects</span>
+                                <a href="#contact" className="group relative flex items-center justify-center h-12 min-w-[180px] overflow-hidden bg-primary px-8 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:bg-white hover:text-black">
+                                    <span className="relative z-10">Init Contact</span>
                                     <div className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 group-hover:translate-x-0"></div>
                                 </a>
-                                <a href="/resume.pdf" download className="group h-12 min-w-[180px] flex items-center justify-center gap-3 border border-white/20 bg-transparent px-8 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:border-primary hover:text-primary">
+                                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="group h-12 min-w-[180px] flex items-center justify-center gap-3 border border-white/20 bg-transparent px-8 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:border-primary hover:text-primary">
                                     <span className="material-symbols-outlined text-lg">download</span>
                                     <span>Resume_v2.4</span>
                                 </a>
@@ -213,10 +212,10 @@ export default function Home() {
                                 </motion.h2>
                                 <motion.div variants={fadeInUp} className="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
                                     <p>
-                                        I operate at the intersection of mathematical rigor and creative chaos. My code isn't just functional; it is a manifestation of <span className="text-white font-medium border-b border-primary/50 pb-0.5">intellectual perfectionism</span>.
+                                        I operate at the intersection of mathematical rigor and creative chaos. My code isn&apos;t just functional; it is a manifestation of <span className="text-white font-medium border-b border-primary/50 pb-0.5">intellectual perfectionism</span>.
                                     </p>
                                     <p>
-                                        From architecting distributed systems that handle millions of requests to fine-tuning large language models, I bring a level of focus that borders on obsession. I believe that true innovation lies in the details others overlook. <span className="italic text-slate-500">"꾸준한 루틴이 견고한 시스템을 만든다고 믿습니다."</span>
+                                        From architecting distributed systems that handle millions of requests to fine-tuning large language models, I bring a level of focus that borders on obsession. I believe that true innovation lies in the details others overlook. <span className="italic text-slate-500">&quot;꾸준한 루틴이 견고한 시스템을 만든다고 믿습니다.&quot;</span>
                                     </p>
                                 </motion.div>
                                 <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 pt-6">
@@ -304,60 +303,6 @@ export default function Home() {
                         </div>
                     </section>
 
-                    {/* Projects Section (Added based on PRD) */}
-                    <section className="px-4 py-24 lg:px-40 relative border-b border-white/5" id="work">
-                        <div className="mx-auto max-w-6xl relative z-10">
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="mb-16 flex items-end justify-between border-b border-white/10 pb-6"
-                            >
-                                <div>
-                                    <span className="mb-2 block font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary">03. Executions</span>
-                                    <h2 className="text-3xl font-bold text-white md:text-5xl tracking-tight">Recent Projects</h2>
-                                </div>
-                            </motion.div>
-
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true }}
-                                variants={staggerContainer}
-                                className="space-y-16"
-                            >
-                                {[
-                                    { title: 'Amadeus', role: 'Backend / Data Architect', desc: 'Server Anomaly Detection System built to precisely isolate operational defects with microsecond accuracy. Showcases hardcore analytical capabilities.', tech: ['Python', 'Kafka', 'PostgreSQL', 'AWS'] },
-                                    { title: 'Cohesion & AnChak', role: 'Full-Stack Developer', desc: 'Team matching & platform for international students. A practical execution of user-centric application architecture.', tech: ['React', 'Next.js', 'Spring Boot', 'MySQL'] },
-                                    { title: 'StevTech Pipeline', role: 'Cloud Engineer', desc: 'Drone image data ingestion pipeline demonstrating enterprise-grade cloud deployment and automated processing workflows.', tech: ['AWS S3', 'Lambda', 'Docker', 'Python'] }
-                                ].map((item, i) => (
-                                    <motion.div key={i} variants={fadeInUp} className="group relative border border-white/5 bg-surface-dark p-8 md:p-12 hover:border-primary/30 transition-all duration-500">
-                                        <div className="flex flex-col md:flex-row gap-8 items-start">
-                                            <div className="flex-1 space-y-4">
-                                                <div className="font-mono text-primary text-xs tracking-widest uppercase">{item.role}</div>
-                                                <h3 className="text-2xl md:text-4xl font-bold text-white">{item.title}</h3>
-                                                <p className="text-slate-400 font-light leading-relaxed max-w-xl">
-                                                    {item.desc}
-                                                </p>
-                                                <div className="flex flex-wrap gap-2 pt-4">
-                                                    {item.tech.map(t => (
-                                                        <span key={t} className="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs font-mono uppercase">
-                                                            {t}
-                                                        </span>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                            <div className="mt-6 md:mt-0 flex shrink-0">
-                                                <button className="h-12 w-12 flex items-center justify-center border border-white/20 text-white hover:bg-primary hover:border-primary transition-all rounded-full group-hover:rotate-45">
-                                                    <span className="material-symbols-outlined font-light">arrow_upward</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </motion.div>
-                        </div>
-                    </section>
 
                     {/* Hobbies Section */}
                     <section className="py-24 px-4 lg:px-40 relative overflow-hidden" id="hobbies">
@@ -432,7 +377,7 @@ export default function Home() {
                     </section>
 
                     {/* Contact Section */}
-                    <section className="bg-background-dark border-t border-white/5 py-24 px-4 lg:px-40 relative" id="contact">
+                    <section className="bg-background-dark border-t border-white/5 py-12 px-4 lg:px-40 relative" id="contact">
                         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
@@ -441,32 +386,14 @@ export default function Home() {
                             transition={{ duration: 0.6 }}
                             className="mx-auto max-w-4xl text-center"
                         >
-                            <span className="mb-6 block font-mono text-xs text-primary tracking-[0.3em] uppercase">Status: Available</span>
-                            <h2 className="mb-8 text-4xl md:text-5xl font-bold text-white tracking-tight">Ready to initiate?</h2>
-                            <p className="mb-12 text-lg text-slate-400 font-light max-w-2xl mx-auto">
-                                Open for select roles in Enterprise Cloud and Backend Engineering. Let's build robust infrastructure together.
-                            </p>
-                            <a className="group inline-flex items-center gap-4 border border-primary bg-primary/10 px-10 py-4 text-sm font-mono font-bold uppercase tracking-widest text-white transition-all hover:bg-primary hover:shadow-[0_0_30px_-5px_rgba(158,27,17,0.5)]" href="mailto:contact@salieri.dev">
+                            <h2 className="mb-6 text-2xl font-bold text-white tracking-tight">Ready to initiate?</h2>
+                            <a className="group inline-flex items-center gap-4 border border-primary bg-primary/10 px-8 py-3 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:bg-primary hover:shadow-[0_0_30px_-5px_rgba(158,27,17,0.5)]" href="mailto:contact@salieri.dev">
                                 <span className="material-symbols-outlined group-hover:animate-bounce">mail</span>
                                 Initialize Contact
                             </a>
-                            <div className="mt-24 flex flex-col items-center justify-between gap-8 border-t border-white/5 pt-10 sm:flex-row relative">
-                                <div className="flex items-center gap-3 text-white">
-                                    <div className="size-8 border border-primary/30 bg-primary/10 rounded flex items-center justify-center font-mono font-bold text-xs text-primary">S</div>
-                                    <div className="flex flex-col items-start">
-                                        <span className="font-bold tracking-tight text-sm">SALIERI</span>
-                                        <span className="text-[10px] text-slate-500 font-mono">SYSTEMS</span>
-                                    </div>
-                                </div>
-                                <div className="flex gap-8">
-                                    <a className="text-slate-500 hover:text-primary transition-colors transform hover:scale-110" href="#"><span className="material-symbols-outlined text-xl">code</span></a>
-                                    <a className="text-slate-500 hover:text-primary transition-colors transform hover:scale-110" href="#"><span className="material-symbols-outlined text-xl">alternate_email</span></a>
-                                    <a className="text-slate-500 hover:text-primary transition-colors transform hover:scale-110" href="#"><span className="material-symbols-outlined text-xl">hub</span></a>
-                                </div>
-                                <div className="flex flex-col items-end gap-1">
-                                    <p className="font-mono text-[10px] text-slate-600 uppercase tracking-wider">© 2026 Salieri. All systems nominal.</p>
-                                    <p className="font-mono text-[8px] text-primary/30 italic group hover:text-primary transition-colors">Deployed 3 times faster</p>
-                                </div>
+                            <div className="mt-12 flex flex-col items-center justify-center gap-4 border-t border-white/5 pt-6 sm:flex-row relative">
+                                <p className="font-mono text-[10px] text-slate-600 uppercase tracking-wider">© 2026 Salieri. All systems nominal.</p>
+                                <p className="font-mono text-[8px] text-primary/30 italic group hover:text-primary transition-colors cursor-default">Deployed 3 times faster</p>
                             </div>
                         </motion.div>
                     </section>
