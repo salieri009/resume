@@ -100,7 +100,15 @@ export default function Home() {
                         <a className="font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#stack">02. Stack</a>
                         <a className="font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors" href="#hobbies">03. Hobbies</a>
                     </nav>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 sm:gap-6">
+                        <div className="hidden sm:flex items-center gap-4 border-r border-white/10 pr-6">
+                            <a href="https://github.com/salieri009" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors flex items-center gap-1 group">
+                                <span className="font-mono text-xs uppercase tracking-widest group-hover:text-primary transition-colors">GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jungwookvan" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-white transition-colors flex items-center gap-1 group">
+                                <span className="font-mono text-xs uppercase tracking-widest group-hover:text-primary transition-colors">LinkedIn</span>
+                            </a>
+                        </div>
                         <a className="hidden sm:flex h-9 items-center justify-center border border-primary/50 bg-primary/10 px-6 text-xs font-mono font-bold text-primary hover:bg-primary hover:text-white transition-all uppercase tracking-wider tech-border hover-tech-border" href="#contact">
                             Initialize_Contact
                         </a>
