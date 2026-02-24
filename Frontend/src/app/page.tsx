@@ -73,13 +73,15 @@ export default function Home() {
                 animate={cometControls}
                 initial={{ opacity: 0 }}
             >
-                <div className="relative flex items-center h-4 w-[400px]">
-                    {/* Tail - Linear trail fading into transparency (Tail is behind on the left now) */}
-                    <div className="absolute left-6 w-[350px] h-[3px] bg-gradient-to-r from-transparent via-primary to-[#FFD700] opacity-80 shadow-[0_0_15px_1px_rgba(158,27,17,0.8)]"></div>
-                    {/* Head Glow/Corona - Deep intense crimson surrounding the core */}
-                    <div className="absolute left-1 w-12 h-12 rounded-full bg-primary blur-md mix-blend-screen z-0"></div>
-                    {/* Head Core - Intense blinding white-yellow (Lead is on the left) */}
-                    <div className="absolute left-0 w-8 h-8 rounded-full bg-white blur-[1px] z-10 shadow-[0_0_30px_10px_#FFD700]"></div>
+                <div className="relative flex items-center h-4 w-[600px] origin-left">
+                    {/* Tail - Long, elegant trail fading into transparency */}
+                    <div className="absolute left-6 w-[500px] h-[2px] bg-gradient-to-r from-transparent via-primary/80 to-[#ff4d4d] opacity-90 blur-[1px]"></div>
+                    {/* Inner spark trail */}
+                    <div className="absolute left-10 w-[300px] h-[1px] bg-gradient-to-r from-transparent via-[#FFD700]/70 to-white opacity-80 mix-blend-screen"></div>
+                    {/* Head Glow/Corona - Crimson surrounding the core */}
+                    <div className="absolute left-2 w-16 h-8 rounded-[100%] bg-primary blur-md mix-blend-screen z-0 opacity-90"></div>
+                    {/* Head Core - Sharp blinding white-yellow */}
+                    <div className="absolute left-0 w-8 h-3 rounded-[100%] bg-white blur-[1px] z-10 shadow-[0_0_20px_5px_rgba(255,215,0,0.8)]"></div>
                 </div>
             </motion.div>
 
