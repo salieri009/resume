@@ -143,11 +143,11 @@ export default function Home() {
                                 &gt; Executing with precision.
                             </motion.p>
                             <motion.div variants={fadeInUp} className="flex flex-col gap-6 sm:flex-row mt-8 mb-16 relative z-50">
-                                <a href="#contact" className="group relative flex items-center justify-center h-12 min-w-[180px] overflow-hidden bg-primary px-8 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:bg-white hover:text-black">
+                                <a href="#contact" className="group relative flex items-center justify-center h-12 min-w-[180px] overflow-hidden bg-primary px-8 text-xs font-mono font-normal uppercase tracking-widest text-white transition-all hover:bg-white hover:text-black">
                                     <span className="relative z-10">Init Contact</span>
                                     <div className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 group-hover:translate-x-0"></div>
                                 </a>
-                                <a href="/resume.pdf" download="Jungwook_Van_Resume.pdf" className="group h-12 min-w-[180px] flex items-center justify-center gap-3 border border-white/20 bg-transparent px-8 text-xs font-mono font-bold uppercase tracking-widest text-white transition-all hover:border-primary hover:text-primary backdrop-blur-sm">
+                                <a href="/resume.pdf" download="Jungwook_Van_Resume.pdf" className="group h-12 min-w-[180px] flex items-center justify-center gap-3 border border-white/20 bg-transparent px-8 text-xs font-mono font-normal uppercase tracking-widest text-white transition-all hover:border-primary hover:text-primary backdrop-blur-sm">
                                     <span className="material-symbols-outlined text-lg" style={{ fontSize: '20px', fontFamily: '"Material Symbols Outlined"' }}>download</span>
                                     <span>Download Resume</span>
                                 </a>
@@ -160,7 +160,7 @@ export default function Home() {
                     </section>
 
                     {/* Quick Stats Section */}
-                    <section className="relative z-30 -mt-24 px-4 pb-16 lg:px-40">
+                    <section className="relative z-30 px-4 pt-12 pb-16 lg:px-40">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -292,7 +292,7 @@ export default function Home() {
                                             <span className="font-mono text-[10px] text-primary">KOREA</span>
                                         </div>
                                         <div className="mb-6 flex h-10 w-10 items-center justify-center border border-primary/20 bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                            <span className="material-symbols-outlined" style={{ fontSize: '24px', fontFamily: '"Material Symbols Outlined"' }}>{item.icon}</span>
+                                            <span className="material-symbols-outlined" style={{ fontSize: '18px', fontFamily: '"Material Symbols Outlined"' }}>{item.icon}</span>
                                         </div>
                                         <h3 className="mb-3 text-lg font-bold text-white font-mono uppercase tracking-wide">{item.title}</h3>
                                         <p className="text-sm text-slate-400 leading-relaxed font-light">
@@ -341,7 +341,7 @@ export default function Home() {
                                     </div>
                                     <div className="flex items-start gap-6 relative z-10">
                                         <div className="flex h-16 w-16 shrink-0 items-center justify-center border border-primary/20 bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                            <span className="material-symbols-outlined font-light" style={{ fontSize: '32px', fontFamily: '"Material Symbols Outlined"' }}>fitness_center</span>
+                                            <span className="material-symbols-outlined font-light" style={{ fontSize: '24px', fontFamily: '"Material Symbols Outlined"' }}>fitness_center</span>
                                         </div>
                                         <div>
                                             <h3 className="text-xl font-bold text-white font-mono uppercase">Iron Routine</h3>
@@ -362,7 +362,7 @@ export default function Home() {
                                     </div>
                                     <div className="flex items-start gap-6 relative z-10">
                                         <div className="flex h-16 w-16 shrink-0 items-center justify-center border border-primary/20 bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                            <span className="material-symbols-outlined font-light" style={{ fontSize: '32px', fontFamily: '"Material Symbols Outlined"' }}>precision_manufacturing</span>
+                                            <span className="material-symbols-outlined font-light" style={{ fontSize: '24px', fontFamily: '"Material Symbols Outlined"' }}>precision_manufacturing</span>
                                         </div>
                                         <div>
                                             <h3 className="text-xl font-bold text-white font-mono uppercase">Gunpla Modeling</h3>
@@ -399,7 +399,7 @@ export default function Home() {
                         </motion.div>
                     </section>
                 </main>
-            </div>
+            </div >
         </>
     );
 }
