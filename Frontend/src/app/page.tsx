@@ -212,8 +212,21 @@ export default function Home() {
                                     <p>
                                         I operate at the intersection of mathematical rigor and creative chaos. My code isn&apos;t just functional; it is a manifestation of <span className="text-white font-medium border-b border-primary/50 pb-0.5">intellectual perfectionism</span>.
                                     </p>
+                                    <p className="text-sm">
+                                        수학적 엄밀함과 창조적 혼돈의 교차점에서 작업합니다. 저의 코드는 단순한 기능을 넘어 지적 완벽주의의 발현입니다.
+                                    </p>
+                                    <p className="text-sm">
+                                        数学的な厳密さと創造的な混沌の交差点で作業します。私のコードは単なる機能ではなく、知的な完璧主義の現れです。
+                                    </p>
+                                    <div className="h-4"></div>
                                     <p>
                                         From architecting distributed systems that handle millions of requests to fine-tuning large language models, I bring a level of focus that borders on obsession. I believe that true innovation lies in the details others overlook. <span className="italic text-slate-500">&quot;꾸준한 루틴이 견고한 시스템을 만든다고 믿습니다.&quot;</span>
+                                    </p>
+                                    <p className="text-sm">
+                                        수백만 건의 요청을 처리하는 분산 시스템 설계부터 대규모 언어 모델 미세 조정까지, 강박에 가까운 집중력을 발휘합니다. 진정한 혁신은 남들이 간과하는 디테일에 있다고 믿습니다.
+                                    </p>
+                                    <p className="text-sm">
+                                        数百万の要求を処理する分散システムの設計から、大規模言語モデルの微調整まで、強迫観念に近い集中力を発揮します。真の革新は他の人が見落とす細部にあると信じています。
                                     </p>
                                 </motion.div>
                                 <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 pt-6">
